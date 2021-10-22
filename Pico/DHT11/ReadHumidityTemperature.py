@@ -49,7 +49,7 @@ while True:
 	print("Temperature: {}".format(sensor.temperature))
 	print("Humidity: {}".format(sensor.humidity))
 	
-	if sensor.humidity > max_humidity_for_warning:
+	if sensor.humidity >= max_humidity_for_warning:
 		is_warning = 1
 	else:
 		is_warning = 0
