@@ -13,4 +13,6 @@ Microcontroller and robotics repo for prototyping and tinkering.
 ### Get the Thonny IDE
 - https://thonny.org/
 
+## Tips
+- https://docs.micropython.org/en/latest/library/machine.Pin.html
 ---
