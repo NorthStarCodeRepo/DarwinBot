@@ -1,4 +1,5 @@
 # Turn a light on with a motion sensor - MH Flying Fish
+# Connect using 3V3 power
 from machine import Pin
 import utime
 

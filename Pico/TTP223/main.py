@@ -1,4 +1,5 @@
 # Turn a light on by touching a TTP223 touch sensor
+# Connect using 3V3 power
 import machine
 
 touch = machine.Pin(15, machine.Pin.IN) # touch sensor input
