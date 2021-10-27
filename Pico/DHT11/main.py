@@ -6,8 +6,14 @@ from DHT11 import DHT11, InvalidChecksum
 onboard_led_pin_id = 25 # Pin GPIO25
 max_humidity_for_warning = 55.0
 is_warning = 0
+
+onboard_dht11_power_out = 16 #GPIO16
+dht11_power = machine.Pin(onboard_dht11_power_out, machine.Pin.OUT)
+dht11_power.value(1) # Turn on constant power for DHT11 sensor
+
 onboard_light_pin = 15 # GPIO15
 humidity_warning_light = machine.Pin(onboard_light_pin, machine.Pin.OUT)
+
 pin = Pin(28, Pin.OUT, Pin.PULL_DOWN)
 sensor = DHT11(pin)
 
