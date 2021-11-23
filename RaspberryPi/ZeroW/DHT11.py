@@ -1,10 +1,11 @@
 # https://www.thegeekpub.com/236867/using-the-dht11-temperature-sensor-with-the-raspberry-pi/
+# After fresh RPi OS install run the following
 # sudo pip3 install Adafruit_DHT
 import Adafruit_DHT
 import time
 
 DHT_SENSOR = Adafruit_DHT.DHT11
-DHT_PIN = 14
+DHT_PIN = 14 # Board position #8, fourth down from top right
 
 while True:
     humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT_PIN)
