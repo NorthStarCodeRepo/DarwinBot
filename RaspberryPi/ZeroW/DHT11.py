@@ -1,3 +1,4 @@
+# This version uses the new Adafruit library. The old Adafruit DHT library is deprecated.
 # https://medium.com/initial-state/how-to-build-a-raspberry-pi-temperature-monitor-8c2f70acaea9
 # After fresh RPi OS install run the following
 # sudo pip3 install adafruit-circuitpython-dht
