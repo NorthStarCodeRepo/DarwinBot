@@ -8,18 +8,28 @@ import adafruit_dht
 import time
 import board
 
-DHT_PIN = board.D14 # Board position #8, fourth down from top right
+# Board position #8, fourth down from top right
+DHT_PIN = board.D14
 dhtSensor = adafruit_dht.DHT11(DHT_PIN)
+SLEEP_DURATION = 60
+RETRY_DURATION = 5
+
+# Slight startup delay to prevent sensor errors
+print("Starting application...")
+time.sleep(5)
 
 while True:
     try:
         temp_c = dhtSensor.temperature
         humidity = dhtSensor.humidity
         if humidity is not None and temp_c is not None:
+            # Convert to F
             print("Temp={0:0.1f}F Humidity={1:0.1f}%".format(round((temp_c * 1.8) + 32), humidity))
         else:
-            print("Sensor failure. Check wiring.")
+            # If it fails then just set a retry pause and do it again
+            time.sleep(RETRY_DURATION)
     except:
-        print("Sensor failure. Check wiring.")
+        # If it fails then just set a retry pause and do it again
+        time.sleep(RETRY_DURATION)
     finally:
-        time.sleep(5)
+        time.sleep(SLEEP_DURATION)
